@@ -1,0 +1,24 @@
+namesuffix: -complete
+commonLabels:
+  app: wordpress-challenge-complete
+
+configMapGenerator:
+  - name: storage
+    files:
+      - pvc.yaml
+
+secretGenerator:
+  - name: db-user
+    literals:
+      - user = user-9Kdnt37s
+  - name: db-pass
+    literals:
+      - password = j73Gtcq0p  
+
+resources:
+  - ../../base
+
+patches:
+  - path: deployment_storage_patch.yaml
+  - path: credential_patch.yaml
+

@@ -1,0 +1,10 @@
+kind: Route
+metadata:
+  name: wordpress-db
+spec:
+  port:
+    targetPort: http
+  to:
+    kind: Service
+    name: wordpress-db
+

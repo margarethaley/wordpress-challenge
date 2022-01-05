@@ -1,0 +1,14 @@
+namespace: default
+
+commonLabels:
+  app: wordpress-challenge
+
+resources:
+- deployment.yaml
+- service.yaml
+- route.yaml
+- db-deployment.yaml
+- db-service.yaml
+
+configurations:
+- namereference.yaml

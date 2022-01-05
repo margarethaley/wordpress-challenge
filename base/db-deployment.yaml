@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-db
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: mariadb
+          image: docker.io/library/mariadb:latest
+          ports:
+            - containerPort: 80
+              name: http
+          env:
+            - name: db-user
+              value: user
+            - name: db-password
+              value: password
+
+

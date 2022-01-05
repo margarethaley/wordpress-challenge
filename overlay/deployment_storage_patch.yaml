@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-challenge
+spec:
+  template:
+    spec:
+      containers:
+        - name: wordpress
+          volumeMounts:
+            - name: storage
+              mountPath: ?
+      volumes:
+        - name: storage
+          configMap:
+            name: storage
