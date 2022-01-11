@@ -10,12 +10,17 @@ spec:
         - name: mariadb
           image: docker.io/library/mariadb:latest
           ports:
-            - containerPort: 80
-              name: http
+            - containerPort: 3306
+              name: wordpress-db
           env:
-            - name: db-user
-              value: user
-            - name: db-password
-              value: password
-
-
+            - name: MARIADB_USER
+              value: user1
+            - name: MARIADB_PASSWORD
+              value: 
+            - name: MARIADB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-pass
+                  key: root-password
+            - name: MARIADB_DATABASE
+              value: test-database

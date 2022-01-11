@@ -4,7 +4,7 @@ metadata:
   name: wordpress-db
 spec:
   ports:
-    - name: http
-      port: 80
-      targetPort: http
+    - name: wp
+      port: 3306
+  clusterIP: None
 

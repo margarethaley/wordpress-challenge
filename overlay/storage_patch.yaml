@@ -8,9 +8,9 @@ spec:
       containers:
         - name: wordpress
           volumeMounts:
-            - name: storage
-              mountPath: ?
+            - name: mariadb-storage
+              mountPath: var/www/html
       volumes:
-        - name: storage
-          configMap:
-            name: storage
+        - name: mariadb-storage
+          persistentVolumeClaim:
+            claimName: mariadb-data

@@ -1,24 +1,17 @@
-namesuffix: -complete
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: default
+
 commonLabels:
-  app: wordpress-challenge-complete
-
-configMapGenerator:
-  - name: storage
-    files:
-      - pvc.yaml
-
-secretGenerator:
-  - name: db-user
-    literals:
-      - user = user-9Kdnt37s
-  - name: db-pass
-    literals:
-      - password = j73Gtcq0p  
+  app: wordpress-challenge
 
 resources:
-  - ../../base
+- ../base
+- pvc.yaml
 
 patches:
-  - path: deployment_storage_patch.yaml
-  - path: credential_patch.yaml
+  - path: storage_patch.yaml
+  - path: db_storage_patch.yaml
 
+patchesStrategicMerge:
+  - login_patch.yaml
