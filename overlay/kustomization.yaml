@@ -11,5 +11,6 @@ resources:
 - better_login.yaml
 
 patchesStrategicMerge:
-- login_patch.yaml
-- db_login_patch.yaml
+  - db_login_patch.yaml
+  - delete_db_user_patch.yaml
+  - login_patch.yaml
