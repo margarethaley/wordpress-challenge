@@ -8,10 +8,8 @@ commonLabels:
 resources:
 - ../base
 - pvc.yaml
-
-patches:
-  - path: storage_patch.yaml
-  - path: db_storage_patch.yaml
+- better_login.yaml
 
 patchesStrategicMerge:
-  - login_patch.yaml
+- login_patch.yaml
+- db_login_patch.yaml
