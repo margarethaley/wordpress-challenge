@@ -11,4 +11,4 @@ resources:
 - route.yaml
 - db-deployment.yaml
 - db-service.yaml
-- login.yaml
+- root-creds.yaml

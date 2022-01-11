@@ -8,8 +8,11 @@ commonLabels:
 resources:
 - ../base
 - pvc.yaml
-- better_login.yaml
 
 patchesStrategicMerge:
+- delete_wp_login_patch.yaml
+- delete_db_login_patch.yaml
 - login_patch.yaml
 - db_login_patch.yaml
+- storage_patch.yaml
+- db_storage_patch.yaml

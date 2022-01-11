@@ -11,10 +11,10 @@ spec:
             - name: WORDPRESS_DB_USER
               valueFrom:
                 secretKeyRef:
-                  name: db-login
+                  name: login
                   key: user
             - name: WORDPRESS_DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: db-login
+                  name: login
                   key: password

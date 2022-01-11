@@ -11,10 +11,10 @@ spec:
             - name: MARIADB_USER
               valueFrom:
                 secretKeyRef:
-                  name: db-login
+                  name: login
                   key: user
             - name: MARIADB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: db-login
+                  name: login
                   key: password

@@ -20,7 +20,7 @@ spec:
             - name: MARIADB_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: db-pass
+                  name: root-creds
                   key: root-password
             - name: MARIADB_DATABASE
               value: test-database
