@@ -7,13 +7,15 @@ commonLabels:
 
 resources:
 - ../base
-- pvc.yaml
-- login.yaml
+- pvcs/wordpress-data.yaml
+- pvcs/mariadb-data.yaml
 
-patchesStrategicMerge:
-- delete_wp_login_patch.yaml
-- delete_db_login_patch.yaml
-- wp_login_patch.yaml
-- db_login_patch.yaml
-- wp_storage_patch.yaml
-- db_storage_patch.yaml
+patches:
+  - path: deployments/wordpress-db_pvc_patch.yaml
+  - path: deployments/wordpress_pvc_patch.yaml
+
+secretGenerator:
+  - name: mariadb-credentials
+    behavior: merge
+    envs:
+      - secrets/mariadb.env
