@@ -12,15 +12,6 @@ spec:
           ports:
             - containerPort: 3306
               name: wordpress-db
-          env:
-            - name: MARIADB_USER
-              value: user1
-            - name: MARIADB_PASSWORD
-              value: 
-            - name: MARIADB_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: root-creds
-                  key: root-password
-            - name: MARIADB_DATABASE
-              value: test-database
+          envFrom:
+            - secretRef:
+                name: mariadb-credentials
