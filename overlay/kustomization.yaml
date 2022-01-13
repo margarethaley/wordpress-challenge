@@ -7,9 +7,12 @@ commonLabels:
 
 resources:
 - ../base
-- pvc.yaml
-- login.yaml
+- pvcs/wordpress-data.yaml
+- pvcs/mariadb-data.yaml
 
+patches:
+  - path: deployments/wordpress-db_pvc_patch.yaml
+  - path: deployments/wordpress_pvc_patch.yaml
 
 secretGenerator:
   - name: mariadb-credentials

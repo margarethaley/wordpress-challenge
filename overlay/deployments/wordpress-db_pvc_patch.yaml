@@ -8,9 +8,9 @@ spec:
       containers:
         - name: mariadb
           volumeMounts:
-            - name: mariadb-storage
+            - name: mariadb-data
               mountPath: /var/lib/mysql/data
       volumes:
-        - name: mariadb-storage
+        - name: mariadb-data
           persistentVolumeClaim:
             claimName: mariadb-data

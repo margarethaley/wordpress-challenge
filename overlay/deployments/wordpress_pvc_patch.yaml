@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wordpress-challenge
+  name: wordpress
 spec:
   template:
     spec:
       containers:
         - name: wordpress
           volumeMounts:
-            - name: mariadb-storage
-              mountPath: var/www/html
+            - name: wordpress-data
+              mountPath: /var/www/html
       volumes:
-        - name: mariadb-storage
+        - name: wordpress-data
           persistentVolumeClaim:
-            claimName: mariadb-data
+            claimName: wordpress-data
