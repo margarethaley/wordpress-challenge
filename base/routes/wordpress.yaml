@@ -1,11 +1,10 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: wordpress-challenge
+  name: wordpress
 spec:
   port:
     targetPort: http
   to:
     kind: Service
-    name: wordpress-challenge
-
+    name: wordpress

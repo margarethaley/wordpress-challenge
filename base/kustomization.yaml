@@ -6,9 +6,9 @@ commonLabels:
   app: wordpress-challenge
 
 resources:
-- deployment.yaml
-- service.yaml
-- route.yaml
-- db-deployment.yaml
-- db-service.yaml
+- deployments/wordpress.yaml
+- deployments/wordpress-db.yaml
+- services/wordpress.yaml
+- services/wordpress-db.yaml
+- routes/wordpress.yaml
 - root-creds.yaml
